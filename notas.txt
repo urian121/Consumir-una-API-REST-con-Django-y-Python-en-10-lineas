@@ -1,0 +1,12 @@
+
+Consumir APIS con Django
+Consume Rest API in Django Web Application
+Cómo mostrar información de una base de datos usando Bootstrap y Django
+Cómo mostrar datos de la API de DigitalOcean con Django
+Paso 1: Crear un proyecto de Django básico
+Paso 2: Crear una aplicación de Django básica
+Create an API with Python | Django | MySQL | REST Framework
+Como Crear una API REST con Django 3.1.1 + Consumir Datos en una Aplicación Android
+Django Restful CRUD API with MySQL example
+Django CRUD with MySQL example | Django Rest Framework
+Build a REST API with Django Rest Framework and MySQL

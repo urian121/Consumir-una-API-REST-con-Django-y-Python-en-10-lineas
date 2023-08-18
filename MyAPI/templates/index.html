@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consumiendo una API con Djando - Libreria(Requests)</title>
+    <link rel="shortcut icon" href="{% static 'imgs/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  </head>
+  <body>
+    <h1 class="titulo">Lista de Productos</h1>
+
+    <div class="flex-container">
+      {% for producto in productos %}
+      <div class="product-card">
+        <div class="product-tumb">
+          <img src="{{ producto.image}}" alt="{{ producto.title }}" />
+        </div>
+        <div class="product-details">
+          <h4>{{ producto.title }}</h4>
+          <div class="product-bottom-details">
+            <div class="product-price">Precio: ${{ producto.price }}</div>
+          </div>
+          <p>{{ producto.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
