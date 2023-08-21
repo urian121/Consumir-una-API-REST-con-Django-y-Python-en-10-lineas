@@ -27,7 +27,7 @@
     Visitar la URL http://127.0.0.1:8000/
 
     Instalar la Biblioteca (libreria, paquete) Requests
-    pip install requests
+    ` pip install requests`
 
 
     Crear mi primera aplicación en Django MyAPI
