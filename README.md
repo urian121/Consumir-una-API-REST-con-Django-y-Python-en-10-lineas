@@ -14,10 +14,10 @@
   Instalar Djando desde Pip en nuestro entorno virtual.
   `pip install Django`
 
-  Crear el proyecto con Djando
-  `django-admin startproject Project_API .`
-  El punto . es crucial porque le dice al script que instale Django en el directorio actual,
-  para el cual el punto sirve de abreviatura
+    Crear el proyecto con Djando
+     `django-admin startproject Project_API .`
+      El punto . es crucial porque le dice al script que instale Django en el directorio actual,
+      para el cual el punto sirve de abreviatura
 
 
     Ya en este punto se puede correr el proyecto 'Project_API' que a creado Django,
