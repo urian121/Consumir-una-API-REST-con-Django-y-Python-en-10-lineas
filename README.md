@@ -12,7 +12,7 @@
   `deactivate`
 
   Instalar Djando desde Pip en nuestro entorno virtual.
-  pip install Django
+  `pip install Django`
 
   Crear el proyecto con Djando
   `django-admin startproject Project_API .`
