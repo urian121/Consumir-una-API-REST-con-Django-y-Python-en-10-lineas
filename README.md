@@ -56,9 +56,9 @@
    urlpatterns = [
    path('admin/', admin.site.urls),
 
-   # registering blog application's urls in project
+   # registering MyAPI application's urls in project
 
-   path('blog/', include('blog.urls')),
+   path('MyAPI/', include('MyAPI.urls')),
    ]
 
    Correr el proyecto creado en Python & Django
