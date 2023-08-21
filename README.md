@@ -41,11 +41,11 @@ Verificar la instalacion con
 	
 -
 
-Creamos una aplicacion en el proyecto de Django
-`python manage.py startapp api_django`
+	Creamos una aplicacion en el proyecto de Django
+	`python manage.py startapp api_django`
 
+-
 
-- 
         Instalar el paquete `requests` para hacer solicitudes HTTP
        `pip install requests`
        	Volvemos a listar los paquete de nuestro proyecto para verificar que si este 		 instalado el paquete requests `pip list`
@@ -97,7 +97,7 @@ Ahora vamos a el archivo urls.py de nuestro proyecto para incluir en el archivo 
 		path('', include('api_django.urls')),
 	]`
 
-Por ultimo creamos una carpeta en nuestra aplicacion que se llame `template` alli creamos un archivo `index.html` y recorremos toda la data que esta llegando, asi:
+Por ultimo creamos una carpeta en nuestra aplicacion que se llame `templates` alli creamos un archivo `index.html` y recorremos toda la data que esta llegando, asi:
 
 `
 
