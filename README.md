@@ -46,20 +46,19 @@ Verificar la instalacion con
 
 -
 
-        Instalar el paquete `requests` para hacer solicitudes HTTP
-       `pip install requests`
-       	 Volvemos a listar los paquete de nuestro proyecto para verificar que si este 		
-	 instalado el paquete requests `pip list`
+     Instalar el paquete `requests` para hacer solicitudes HTTP
+     `pip install requests`
+     Volvemos a listar los paquete de nuestro proyecto para verificar que si este instalado el paquete requests `pip list`
 		
 
 
-Ahora instalar la aplicacion ya creada en nuestro proyecto `project_core` para esto debemos ir al archivo settings.py y en la parte de `INSTALLED_APPS`
+Ahora instalar la aplicacion ya creada en nuestro proyecto `project_core` para esto debemos ir al archivo settings.py y en la parte de `INSTALLED_APPS` en esa lista agregar la aplicacion.
 
     INSTALLED_APPS = [
     '-------',
     'api',
     ]
-    en esa lista agregar la aplicacion.
+
 
 
 Ir al archivo views.py de para definir la funcion que realizara la consulta a la API
