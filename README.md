@@ -48,7 +48,7 @@ Verificar la instalacion con
 
         Instalar el paquete `requests` para hacer solicitudes HTTP
        `pip install requests`
-       	Volvemos a listar los paquete de nuestro proyecto para verificar que si este 		
+       	 Volvemos a listar los paquete de nuestro proyecto para verificar que si este 		
 	 instalado el paquete requests `pip list`
 		
 
