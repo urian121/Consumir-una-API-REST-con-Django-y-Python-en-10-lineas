@@ -83,7 +83,7 @@ Ir al archivo views.py de para definir la funcion que realizara la consulta a la
         	productos = []
         `
 
-Creamo el archivo urls.py en nuestra aplicacion, donde importamos desde view la funcion creada para hacer la solicitud a dicha API
+Creamos el archivo urls.py en nuestra aplicacion, donde importamos desde view la funcion creada para hacer la solicitud a dicha API
 `
 
 	from django.urls import path
