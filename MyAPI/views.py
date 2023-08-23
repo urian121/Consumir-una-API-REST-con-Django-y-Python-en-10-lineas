@@ -12,6 +12,7 @@ def obtener_productos(request):
 
     if response.status_code == 200:
         productos = response.json()
+        # response.json() convierte el contenido de una respuesta HTTP (generalmente en formato JSON)
         """for producto in productos:
             print(producto)
         """
