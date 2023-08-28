@@ -18,6 +18,7 @@ def obtener_productos():
 
     if response.status_code == 200:
         productos = response.json()
+        # return response.json()
         return productos
     return []
 
