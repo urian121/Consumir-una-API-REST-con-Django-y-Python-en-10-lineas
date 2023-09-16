@@ -1,62 +1,72 @@
 # 🔥 Consumir una API con Django y Python 🐍 😯
 
-#### Paso a paso:
+###### 1. Crear un entorno virtual, hay muchas formas
 
-Crear un entorno virtual
+    Opción 1: Crear entorno virtual con el paquete virtualenv,
+    puedes instalarlo de forma global en el sistema atraves de https://pypi.org/project/virtualenv/
 
-    `virtualenv env`
-      https://pypi.org/project/virtualenv/
+    `pip install virtualenv` #Instalar paquete virtualenv
+    `virtualenv --version` #Version
+    `virtualenv env` #Crear entorno con el paquete virtualenv
 
-- Activar el entorno virtual
+    Opción 2: Crear un entorno virtual con el paquete que ya viene por defecto en las ultimas versiones de Python
+    `python -m venv env` o `python3 -m venv env`
 
-  En windows: `. env/Script/activate`
-  En Mac: `. env/bin/activate`
+###### 2. Activar ambiente virtual
 
-- Listar Paquetes
-  `pip freeze`
+    . env/Script/activate #Activar ambiente desde Windows
+    . env/bin/activate  #Activar desde la Mac
+    deactivate #Desactivar mi entorno virtual
 
-- Instalar Django en mi entorno virtual
-  `pip install django`
+###### 3. Instalar Django desde el manejador de paquete de Python Pip
 
-Verificar la instalacion con
-`pip freeze`
+    `pip install Django`
+     Nota: para instalar Django en una version especifica
+    `pip install Django==4.2.4`
+    `python3 -m django --version`  #Vrsion instalada de Django
 
-- Crear un projecto en Django
-  `django-admin startproject  project_core .`
-  el punto al final le indica que cree el proyecto en el directorio actual
+###### 4. Instalar el paquete `requests` para hacer solicitudes HTTP
 
--     Correr el proyecto creado
+     https://pypi.org/project/requests/
+     `pip install requests`
+     Verificar todos los paquetes instalados en el proyecto
+     `pip freeze`
 
-  `python manage.py runserver`
-  👉Revisar la consola y visitar la URL http://127.0.0.1:8000
-  Si deseas cambiar el puerto por donde se esta desplegando el proyecto
-  `python manage.py runserver 8080`
+###### 5. Crear el proyecto con Djando
 
-- Creamos una aplicacion en el proyecto de Django
-  `python manage.py startapp api_django`
+    `django-admin startproject api_django .`
+     El punto . es crucial le dice al script que instale Django en el directorio actual
 
-- Instalar el paquete `requests` para hacer solicitudes HTTP
-  `pip install requests`
-  `https://pypi.org/project/requests/`
-  Volvemos a listar los paquete de nuestro proyecto para verificar que si este instalado el paquete requests `pip list`
+     Ya en este punto se puede correr el proyecto que a creado Django,
+     python manage.py runserver
 
-### Nota: si no quieres hacer ninguno de los pasos anteriores puedes instalar todas las dependencias del proyecto solo ejecutando el archivo requirement.txt `pip install -r requirements.txt`
+###### 6. Correr el proyecto creado con Django
 
--
+      `python manage.py runserver`
+      👉Revisar la consola y visitar la URL http://127.0.0.1:8000
+      Si deseas cambiar el puerto por donde se esta desplegando el proyecto
+      `python manage.py runserver 8080`
 
-Ahora instalar la aplicacion ya creada en nuestro proyecto `project_core` para esto debemos ir al archivo settings.py y en la parte de `INSTALLED_APPS` en esa lista agregar la aplicacion.
+### Nota: si no deseas hacer ninguno de los pasos anteriores puedes instalar todas las dependencias del proyecto solo ejecutando el archivo requirements.txt
 
+    `pip install -r requirements.txt`
+
+###### 7. Crear mi primera aplicación en Django
+
+    `python manage.py startapp api`
+
+###### 8. Instalar nuestra aplicación (upload_img) ya creada en el proyecto
+
+    archivo settings.py
     INSTALLED_APPS = [
-    '-------',
+    ----,
     'api',
     ]
 
-Ir al archivo views.py de para definir la funcion que realizara la consulta a la API
-`
+##### 9. Define la vista en el views.py
 
-# Importando Libreria Requests para hacer solicitudes HTTP
-
-import requests
+    # Importando Libreria Requests para hacer solicitudes HTTP
+    import requests
 
     def obtener_productos(request):
     	# URL de productos
@@ -66,16 +76,14 @@ import requests
     	response = requests.get(URL_API)
 
     	if response.status_code == 200:
-        	productos = response.json()
-        		for producto in productos:
-            		print(producto)
+    		productos = response.json()
+    			for producto in productos:
+    				print(producto)
     	else:
-        	# Lista vacia
-        	productos = []
-        `
+    		# Lista vacia
+    		productos = []
 
-Creamos el archivo urls.py en nuestra aplicacion, donde importamos desde view la funcion creada para hacer la solicitud a dicha API
-`
+##### 10. Configurar el archivo urls.py de la aplicacion
 
     from django.urls import path
     # Importando desde views.py la funcion obtener_productos
@@ -83,21 +91,20 @@ Creamos el archivo urls.py en nuestra aplicacion, donde importamos desde view la
 
     urlpatterns = [
     	path('productos/', obtener_productos, name='obtener_productos'),
-    ]`
+    ]
 
-Ahora vamos a el archivo urls.py de nuestro proyecto para incluir en el archivo urls.py de nuestra aplicacion
-`
+##### 11. Incluimos el archivo urls.py de nuestra aplicacion en nuestro proyecto api_django
 
     from django.urls import path, include
     urlpatterns = [
     	path('admin/', admin.site.urls),
     	# Incluyendo mi aplicacion api_django
     	path('', include('api_django.urls')),
-    ]`
+    ]
 
-Por ultimo creamos una carpeta en nuestra aplicacion que se llame `templates` alli creamos un archivo `index.html` y recorremos toda la data que esta llegando, asi:
+##### 12. Creamos la carpeta templates y dentro un index.html para pintar la data que responde la API
 
-`
+##### Codigo del index.html
 
       {% for producto in productos %}
     		  <div class="product-card">
@@ -114,8 +121,9 @@ Por ultimo creamos una carpeta en nuestra aplicacion que se llame `templates` al
     		  </div>
     {% endfor %}`
 
-Para finalizar solo devemos correr el proyecto de nuevo con:
-`python manage.py runserver`
+##### Para finalizar solo debemos correr el proyecto de nuevo con:
+
+    `python manage.py runserver`
 
 El resultado final seria esto:
 
