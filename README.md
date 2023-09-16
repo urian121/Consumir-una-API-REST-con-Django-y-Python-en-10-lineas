@@ -42,26 +42,27 @@
 
 ###### 6. Correr el proyecto creado con Django
 
-      `python manage.py runserver`
-      👉Revisar la consola y visitar la URL http://127.0.0.1:8000
-      Si deseas cambiar el puerto por donde se esta desplegando el proyecto
-      `python manage.py runserver 8080`
+     `python manage.py runserver`
+     👉Revisar la consola y visitar la URL http://127.0.0.1:8000
+     Si deseas cambiar el puerto por donde se esta desplegando el proyecto
+     `python manage.py runserver 8080`
 
 ### Nota: si no deseas hacer ninguno de los pasos anteriores puedes instalar todas las dependencias del proyecto solo ejecutando el archivo requirements.txt
 
-    `pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
 ###### 7. Crear mi primera aplicación en Django
 
-    `python manage.py startapp api`
+`python manage.py startapp api`
 
 ###### 8. Instalar nuestra aplicación (upload_img) ya creada en el proyecto
 
-    archivo settings.py
-    INSTALLED_APPS = [
-    ----,
-    'api',
-    ]
+archivo settings.py
+
+INSTALLED_APPS = [
+----,
+'api',
+]
 
 ##### 9. Define la vista en el views.py
 
@@ -106,20 +107,20 @@
 
 ##### Codigo del index.html
 
-      {% for producto in productos %}
-    		  <div class="product-card">
-    			<div class="product-tumb">
-    			  <img src="{{ producto.image}}" alt="{{ producto.title }}" />
-    			</div>
-    			<div class="product-details">
-    			  <h4>{{ producto.title }}</h4>
-    			  <div class="product-bottom-details">
-    				<div class="product-price">Precio: ${{ producto.price }}</div>
-    			  </div>
-    			  <p>{{ producto.description }}</p>
-    			</div>
-    		  </div>
-    {% endfor %}`
+    {% for producto in productos %}
+        <div class="product-card">
+        <div class="product-tumb">
+          <img src="{{ producto.image}}" alt="{{ producto.title }}" />
+        </div>
+        <div class="product-details">
+          <h4>{{ producto.title }}</h4>
+          <div class="product-bottom-details">
+          <div class="product-price">Precio: ${{ producto.price }}</div>
+          </div>
+          <p>{{ producto.description }}</p>
+        </div>
+        </div>
+    {% endfor %}
 
 ##### Para finalizar solo debemos correr el proyecto de nuevo con:
 
