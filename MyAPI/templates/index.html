@@ -22,7 +22,8 @@
           <div class="product-bottom-details">
             <div class="product-price">Precio: ${{ producto.price }}</div>
           </div>
-          <p>{{ producto.description }}</p>
+          <!-- truncatewords:15 indicaría que se deben mostrar las primeras 20 palabras y luego agregar ... al final.-->
+          <p>{{ producto.description|truncatewords:15 }}</p>
         </div>
       </div>
       {% endfor %}
