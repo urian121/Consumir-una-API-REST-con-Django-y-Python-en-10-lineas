@@ -3,12 +3,6 @@ from django.shortcuts import render, HttpResponse
 import requests
 
 
-def index(request):
-    productos = obtener_productos(request)
-    print(productos)
-    return HttpResponse("Hola Mundo")
-
-
 def getAPI(request):
     # URL de productos
     URL_API = "https://jsonplaceholder.typicode.com/albums"
@@ -17,23 +11,26 @@ def getAPI(request):
     response = requests.get(URL_API)
 
     if response.status_code == 200:
+        # se utiliza el método json() para extraer los datos en formato JSON de la respuesta y se almacenan en la variable productos
         productos = response.json()
+        """
+        for producto in productos:
+            print(producto)
+        """
         return HttpResponse(productos) or []
 
 
 def obtener_productos(request):
-    # URL de productos
     URL_API = "https://fakestoreapi.com/products"
-
     try:
         # Intenta realizar la solicitud GET a la API
         response = requests.get(URL_API)
         if response.status_code == 200:
+            # se utiliza el método json() para extraer los datos en formato JSON de la respuesta y se almacenan en la variable productos
             productos = response.json()
         else:
             # En caso de un código de respuesta no exitoso, manejar de acuerdo a tus necesidades
-            print(
-                f"Error en la solicitud. Código de respuesta: {response.status_code}")
+            print(f"Error en la solicitud: {response.status_code}")
             productos = []
     except requests.RequestException as e:
         # Manejar errores de solicitud, por ejemplo, problemas de red
