@@ -55,13 +55,13 @@
 
 `python manage.py startapp api`
 
-###### 8. Instalar nuestra aplicación (upload_img) ya creada en el proyecto
+###### 8. Instalar nuestra aplicación (MyAPI) ya creada en el proyecto
 
 archivo settings.py
 
 INSTALLED_APPS = [
 ----,
-'api',
+'MyAPI',
 ]
 
 ##### 9. Define la vista en el views.py
@@ -84,7 +84,7 @@ INSTALLED_APPS = [
     		# Lista vacia
     		productos = []
 
-##### 10. Configurar el archivo urls.py de la aplicacion
+##### 10. Configurar el archivo urls.py de la aplicación
 
     from django.urls import path
     # Importando desde views.py la funcion obtener_productos
@@ -94,7 +94,7 @@ INSTALLED_APPS = [
     	path('productos/', obtener_productos, name='obtener_productos'),
     ]
 
-##### 11. Incluimos el archivo urls.py de nuestra aplicacion en nuestro proyecto api_django
+##### 11. Incluimos el archivo urls.py de nuestra aplicación en nuestro proyecto api_django
 
     from django.urls import path, include
     urlpatterns = [
